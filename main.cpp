@@ -10,7 +10,7 @@ int main()
 {
     unsigned lag = 0;
     std::chrono::time_point<std::chrono::steady_clock> previous_time;
-    std::vector<std::vector<unsigned char>> matrix(COLUMNS, std::vector<unsigned char>(ROWS, 0)); // Initialize the matrix with all 0s
+    std::vector<std::vector<unsigned char>> matrix(COLUMNS, std::vector<unsigned char>(ROWS, 0));
     sf::Event event;
     sf::RenderWindow window(sf::VideoMode(CELL_SIZE * COLUMNS * SCREEN_RESIZE, CELL_SIZE * ROWS * SCREEN_RESIZE), "Tetris", sf::Style::Close);
     window.setView(sf::View(sf::FloatRect(0, 0, CELL_SIZE * COLUMNS, CELL_SIZE * ROWS)));
@@ -64,10 +64,10 @@ int main()
                         cell.setPosition(CELL_SIZE * a, CELL_SIZE * b);
 
                         if (matrix[a][b] == 1) {
-                            cell.setFillColor(sf::Color(255, 0, 0)); // Change color if matrix cell is 1
+                            cell.setFillColor(sf::Color(255, 0, 0));
                         }
                         else {
-                            cell.setFillColor(sf::Color(36,36,85)); // Default color
+                            cell.setFillColor(sf::Color(36,36,85));
                         }
 
                         window.draw(cell);
