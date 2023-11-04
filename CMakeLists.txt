@@ -116,7 +116,10 @@ add_executable(${PROJECT_NAME} main.cpp
         Tetromino.cpp
         GetTetromino.cpp
         GetTetromino.cpp
-        GetTetromino.hpp)
+        GetTetromino.hpp
+        GetWallKickData.hpp
+        GetWallKickData.hpp
+        GetWallKickData.cpp)
 
 ###############################################################################
 
