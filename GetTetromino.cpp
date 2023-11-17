@@ -11,6 +11,8 @@ std::vector<Position> get_tetromino(unsigned char i_shape, unsigned char i_x, un
 
     switch (i_shape)
     {
+        default:
+            [[fallthrough]];
         case 0:
         {
             output_tetromino[0] = {1, -1};

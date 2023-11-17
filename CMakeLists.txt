@@ -119,7 +119,12 @@ add_executable(${PROJECT_NAME} main.cpp
         GetTetromino.hpp
         GetWallKickData.hpp
         GetWallKickData.hpp
-        GetWallKickData.cpp)
+        GetWallKickData.cpp
+        scoresystem.hpp
+        scoresystem.hpp
+        scoresystem.hpp
+        scoresystem.cpp
+        scoresystem.cpp)
 
 ###############################################################################
 

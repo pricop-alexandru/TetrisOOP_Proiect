@@ -7,7 +7,7 @@
 #include "GetTetromino.hpp"
 #include "GetWallKickData.hpp"
 
-Tetromino::Tetromino(unsigned char i_shape, const std::vector<std::vector<unsigned char>>& i_matrix) :
+Tetromino::Tetromino(unsigned char i_shape, [[maybe_unused]] const std::vector<std::vector<unsigned char>>& i_matrix) :
         rotation(0),
         shape(i_shape),
         minos(get_tetromino(i_shape, COLUMNS / 2, 1)){}

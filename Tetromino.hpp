@@ -10,7 +10,7 @@ class Tetromino
 
     std::vector<Position> minos;
 public:
-    Tetromino(unsigned char i_shape, const std::vector<std::vector<unsigned char>>& i_matrix);
+    Tetromino(unsigned char i_shape, [[maybe_unused]] const std::vector<std::vector<unsigned char>>& i_matrix);
 
     bool move_down(const std::vector<std::vector<unsigned char>>& i_matrix);
     bool reset(unsigned char i_shape, const std::vector<std::vector<unsigned char>>& i_matrix);
