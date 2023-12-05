@@ -12,7 +12,7 @@ class Player {
     std::string playerName;
     unsigned int clearedLines;
 public:
-    Player(const std::string& name = "", unsigned int linesCleared = 0);
+    explicit Player(const std::string& name = "", unsigned int linesCleared = 0);
     ~Player();
     Player& operator=(const Player& other);
     void displayInfo() const;
@@ -22,12 +22,12 @@ public:
     void setLinesCleared(unsigned int linesCleared);
 
 
-    std::string getName() const;
-    unsigned int getLinesCleared() const;
+    [[nodiscard]] std::string getName() const;
+    [[nodiscard]] unsigned int getLinesCleared() const;
 
 
 };
-class HighScoreSystem : public Player {
+class HighScoreSystem{
     std::vector<Player> highScores;
 public:
     HighScoreSystem();

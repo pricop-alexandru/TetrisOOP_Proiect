@@ -1,3 +1,5 @@
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "hicpp-multiway-paths-covered"
 //
 // Created by Alex Pricop on 11/3/2023.
 //
@@ -14,6 +16,7 @@ std::vector<Position> get_wall_kick_data(bool i_is_i_shape, unsigned char i_curr
         switch (i_current_rotation)
         {
             case 0:
+                [[fallthrough]];
             case 2:
             {
                 switch (i_next_rotation)
@@ -26,12 +29,8 @@ std::vector<Position> get_wall_kick_data(bool i_is_i_shape, unsigned char i_curr
                     {
                         return {{0, 0}, {1, 0}, {1, -1}, {0, 2}, {1, 2}};
                     }
-                    default:
-                        [[fallthrough]];
                 }
             }
-            default:
-                [[fallthrough]];
             case 1:
             {
                 return {{0, 0}, {1, 0}, {1, 1}, {0, -2}, {1, -2}};
@@ -47,8 +46,6 @@ std::vector<Position> get_wall_kick_data(bool i_is_i_shape, unsigned char i_curr
     {
         switch (i_current_rotation)
         {
-            default:
-                [[fallthrough]];
             case 0:
             {
                 switch (i_next_rotation)
@@ -61,8 +58,6 @@ std::vector<Position> get_wall_kick_data(bool i_is_i_shape, unsigned char i_curr
                     {
                         return {{0, 0}, {-1, 0}, {2, 0}, {-1, -2}, {2, 1}};
                     }
-                    default:
-                        [[fallthrough]];
                 }
             }
             case 1:
@@ -77,8 +72,6 @@ std::vector<Position> get_wall_kick_data(bool i_is_i_shape, unsigned char i_curr
                     {
                         return {{0, 0}, {-1, 0}, {2, 0}, {-1, -2}, {2, 1}};
                     }
-                    default:
-                        [[fallthrough]];
                 }
             }
             case 2:
@@ -93,16 +86,12 @@ std::vector<Position> get_wall_kick_data(bool i_is_i_shape, unsigned char i_curr
                     {
                         return {{0, 0}, {2, 0}, {-1, 0}, {2, -1}, {-1, 2}};
                     }
-                    default:
-                        [[fallthrough]];
                 }
             }
             case 3:
             {
                 switch (i_next_rotation)
                 {
-                    default:
-                        [[fallthrough]];
                     case 0:
                     {
                         return {{0, 0}, {1, 0}, {-2, 0}, {1, 2}, {-2, -1}};
@@ -117,3 +106,4 @@ std::vector<Position> get_wall_kick_data(bool i_is_i_shape, unsigned char i_curr
         return {{0, 0}};
     }
 }
+#pragma clang diagnostic pop
