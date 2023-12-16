@@ -1,7 +1,12 @@
 //
 // Created by Alex Pricop on 11/2/2023.
 //
+
 #pragma once
+
+#include <iostream>
+#include <vector>
+#include "Global.hpp"
 
 class Tetromino
 {
@@ -11,6 +16,7 @@ class Tetromino
     std::vector<Position> minos;
 public:
     Tetromino(unsigned char i_shape, [[maybe_unused]] const std::vector<std::vector<unsigned char>>& i_matrix);
+    friend std::ostream& operator<<(std::ostream& os, const Tetromino& tetromino);
 
     bool move_down(const std::vector<std::vector<unsigned char>>& i_matrix);
     bool reset(unsigned char i_shape, const std::vector<std::vector<unsigned char>>& i_matrix);

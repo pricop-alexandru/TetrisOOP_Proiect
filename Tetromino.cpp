@@ -11,6 +11,16 @@ Tetromino::Tetromino(unsigned char i_shape, [[maybe_unused]] const std::vector<s
         rotation(0),
         shape(i_shape),
         minos(get_tetromino(i_shape, COLUMNS / 2, 1)){}
+
+std::ostream& operator<<(std::ostream& os, const Tetromino& tetromino)
+{
+    for (auto mino : tetromino.minos)
+    {
+        os << mino.x << " " << mino.y << "\n";
+    }
+    return os;
+}
+
 bool Tetromino::move_down(const std::vector<std::vector<unsigned char>>& i_matrix)
 {
     for (Position& mino : minos)

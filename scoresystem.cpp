@@ -3,8 +3,10 @@
 //
 #include "scoresystem.hpp"
 
-Player::Player(const std::string& name, unsigned int linesCleared)
-        : playerName(name), clearedLines(linesCleared) {}
+#include <utility>
+
+Player::Player(std::string  name, unsigned int linesCleared)
+        : playerName(std::move(name)), clearedLines(linesCleared) {}
 
 Player::~Player() {
     std::cout << "Player object destroyed\n";
@@ -16,6 +18,11 @@ Player& Player::operator=(const Player& other) {
         clearedLines = other.clearedLines;
     }
     return *this;
+}
+
+std::ostream& operator<<(std::ostream& os, const Player& player) {
+    os << "Player Name: " << player.playerName << ", Lines Cleared: " << player.clearedLines << "\n";
+    return os;
 }
 
 void Player::displayInfo() const {

@@ -5,7 +5,7 @@
 #include "Global.hpp"
 #include "Tetromino.hpp"
 #include "GetTetromino.hpp"
-
+#include "scoresystem.hpp"
 int main() {
     bool game_over = 0;
     bool hard_drop_pressed = 0;
@@ -34,6 +34,10 @@ int main() {
             sf::Color(219, 0, 0),
             sf::Color(73, 73, 85)
     };
+    sf::Font font;
+    if (!font.loadFromFile("../assets/Retro_Gaming.ttf")) {
+        std::cout << "Error loading font\n";
+    }
     std::vector<std::vector<unsigned char>> matrix(COLUMNS, std::vector<unsigned char>(ROWS));
     sf::Event event{};
     sf::RenderWindow window(sf::VideoMode(2 * CELL_SIZE * COLUMNS * SCREEN_RESIZE, CELL_SIZE * ROWS * SCREEN_RESIZE), "Tetris", sf::Style::Close);
@@ -214,6 +218,24 @@ int main() {
                 preview_border.setOutlineThickness(-1);
                 preview_border.setPosition(CELL_SIZE * (1.5f * COLUMNS - 2.5f), CELL_SIZE * (0.25f * ROWS - 2.5f));
                 window.clear();
+
+                if (1 == game_over) {
+                    // sf::sleep(sf::milliseconds(100));
+
+                    sf::Text game_over_text("Game Over", font, 12);
+                    game_over_text.setFillColor(sf::Color(255, 255, 255));
+                    game_over_text.setPosition(CELL_SIZE * (0.5f * COLUMNS - 3.5f), CELL_SIZE * (0.5f * ROWS - 0.5f));
+                    window.draw(game_over_text);
+
+                    sf::Text restart_text("Press Enter to restart", font, 10);
+                    restart_text.setFillColor(sf::Color(255, 255, 255));
+                    restart_text.setPosition(CELL_SIZE * (0.5f * COLUMNS - 4.5f), CELL_SIZE * (0.5f * ROWS + 1.5f));
+                    window.draw(restart_text);
+
+                    window.display();
+                    continue;
+                }
+
                 for (unsigned char a = 0; a < COLUMNS; a++)
                 {
                     for (unsigned char b = 0; b < ROWS; b++)

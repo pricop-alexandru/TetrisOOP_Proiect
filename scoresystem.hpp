@@ -12,9 +12,10 @@ class Player {
     std::string playerName;
     unsigned int clearedLines;
 public:
-    explicit Player(const std::string& name = "", unsigned int linesCleared = 0);
+    explicit Player(std::string  name = "", unsigned int linesCleared = 0);
     ~Player();
     Player& operator=(const Player& other);
+    friend std::ostream& operator<<(std::ostream& os, const Player& player);
     void displayInfo() const;
 
 
