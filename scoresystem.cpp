@@ -29,19 +29,19 @@ void Player::displayInfo() const {
     std::cout << "Player Name: " << playerName << ", Lines Cleared: " << clearedLines << "\n"; //informatie player
 }
 
-void Player::setName(const std::string& name) {
+[[maybe_unused]] void Player::setName(const std::string& name) {
     playerName = name;
 }
 
-void Player::setLinesCleared(unsigned int linesCleared) {
+[[maybe_unused]] void Player::setLinesCleared(unsigned int linesCleared) {
     clearedLines = linesCleared;
 }
 
-std::string Player::getName() const {
+[[maybe_unused]] std::string Player::getName() const {
     return playerName;
 }
 
-unsigned int Player::getLinesCleared() const {
+[[maybe_unused]] unsigned int Player::getLinesCleared() const {
     return clearedLines;
 }
 HighScoreSystem::HighScoreSystem() = default;
@@ -50,7 +50,7 @@ HighScoreSystem::~HighScoreSystem() {
     std::cout << "HighScoreSystem object destroyed\n";
 }
 
-void HighScoreSystem::addPlayer(const Player& player) {
+[[maybe_unused]] void HighScoreSystem::addPlayer(const Player& player) {
     highScores.push_back(player);//sortare
 }
 
