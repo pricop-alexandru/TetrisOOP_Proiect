@@ -1,4 +1,5 @@
 #pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wimplicit-fallthrough"
 //
 // Created by Alex Pricop on 11/3/2023.
 //
@@ -104,8 +105,11 @@ std::vector<Position> get_wall_kick_data(bool i_is_i_shape, unsigned char i_curr
                     }
                 }
                 [[fallthrough]];
+                default:
+                    break;
             }
         }
         return {{0, 0}};
     }
 }
+#pragma GCC diagnostic pop
