@@ -19,22 +19,22 @@ public:
     void displayInfo() const;
 
 
-    void setName(const std::string& name);
-    void setLinesCleared(unsigned int linesCleared);
+    [[maybe_unused]] void setName(const std::string& name);
+    [[maybe_unused]] void setLinesCleared(unsigned int linesCleared);
 
 
-    [[nodiscard]] std::string getName() const;
-    [[nodiscard]] unsigned int getLinesCleared() const;
+    [[maybe_unused]] [[nodiscard]] std::string getName() const;
+    [[maybe_unused]] [[nodiscard]] unsigned int getLinesCleared() const;
 
 
 };
-class HighScoreSystem{
+class [[maybe_unused]] HighScoreSystem{
     std::vector<Player> highScores;
 public:
     HighScoreSystem();
     ~HighScoreSystem();  // Destructor
-    void addPlayer(const Player& player);
-    void displayHighScores() const;
+    [[maybe_unused]] void addPlayer(const Player& player);
+    [[maybe_unused]] void displayHighScores() const;
 
 };
 

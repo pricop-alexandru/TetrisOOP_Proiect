@@ -44,7 +44,7 @@ std::string Player::getName() const {
 unsigned int Player::getLinesCleared() const {
     return clearedLines;
 }
-HighScoreSystem::HighScoreSystem() {}
+HighScoreSystem::HighScoreSystem() = default;
 
 HighScoreSystem::~HighScoreSystem() {
     std::cout << "HighScoreSystem object destroyed\n";
@@ -54,7 +54,7 @@ void HighScoreSystem::addPlayer(const Player& player) {
     highScores.push_back(player);//sortare
 }
 
-void HighScoreSystem::displayHighScores() const {
+[[maybe_unused]] void HighScoreSystem::displayHighScores() const {
     for (const auto& player : highScores) {
         player.displayInfo();//afisare
     }

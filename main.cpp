@@ -227,6 +227,7 @@ int main() {
                     game_over_text.setPosition(CELL_SIZE * (0.5f * COLUMNS - 3.5f), CELL_SIZE * (0.5f * ROWS - 0.5f));
                     window.draw(game_over_text);
 
+
                     sf::Text restart_text("Press Enter to restart", font, 10);
                     restart_text.setFillColor(sf::Color(255, 255, 255));
                     restart_text.setPosition(CELL_SIZE * (0.5f * COLUMNS - 4.5f), CELL_SIZE * (0.5f * ROWS + 1.5f));
