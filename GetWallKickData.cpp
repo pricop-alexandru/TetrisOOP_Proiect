@@ -1,4 +1,4 @@
-#pragma clang diagnostic push
+
 #pragma GCC diagnostic ignored "-Wimplicit-fallthrough"
 //
 // Created by Alex Pricop on 11/3/2023.
