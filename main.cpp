@@ -244,7 +244,7 @@ int main() {
                         if (0 == clear_lines[b])
                         {
                             cell.setPosition(static_cast<float>(CELL_SIZE * a), static_cast<float>(CELL_SIZE * b));
-                            if (1 == game_over && 0 < matrix[a][b])
+                            if (0 < matrix[a][b])
                             {
                                 cell.setFillColor(cell_colors[8]);
                             }

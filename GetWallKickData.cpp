@@ -112,4 +112,3 @@ std::vector<Position> get_wall_kick_data(bool i_is_i_shape, unsigned char i_curr
         return {{0, 0}};
     }
 }
-#pragma GCC diagnostic pop
