@@ -1,4 +1,4 @@
-# Tetris
+# Tetris - Object Oriented Programming game in C with minimal objects used.
 
 ### Tema 0
 
